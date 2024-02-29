@@ -31,20 +31,16 @@ new_node->n = value;
 new_node->parent = parent;
 
 /* Initialize the left and right children to NULL */
-new_node->left = NULL;
+new_node->left = parent->left;
 new_node->right = NULL;
 
+parent->left = new_node;
 /* If parent already has a left-child, the new node takes its place */
-if (parent->left != NULL)
+if (new_node->left)
 {
 /* Set the old left-child as the left-child of the new node */
-new_node->left = parent->left;
-/* Set the parent of the old left-child to the new node */
-parent->left->parent = new_node;
+new_node->left->parent = new_node;
 }
-
-/* Set the new node as the left-child of the parent */
-parent->left = new_node;
 
 /* Return a pointer to the created node */
 return (new_node);
