@@ -16,7 +16,7 @@ return (NULL);
 }
 
 /* Allocate memory for the new node */
-binary_tree_t *new_node = malloc(sizeof(binary_tree_t));
+binary_tree_t *new_node;
 
 if (new_node == NULL)
 {
