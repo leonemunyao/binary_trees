@@ -14,6 +14,6 @@ if (tree == NULL)
 return (0);
 }
 
-/* Recursively calculate the size of the left and right subtrees, plus 1 for the current node */
+/* Recursively calculate the size of the left&right subtrees&1 node */
 return (binary_tree_size(tree->left) + binary_tree_size(tree->right) + 1);
 }
