@@ -33,18 +33,9 @@ return (0);
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-int left_height, right_height;
-
-/* Check if tree is NULL */
-if (tree == NULL)
+if (tree)
 {
-return (0);
+return (binary_tree_height(tree->left) - binary_tree_height(tree->right));
 }
-
-/* Calculate the height of the left and right subtrees */
-left_height = binary_tree_height(tree->left);
-right_height = binary_tree_height(tree->right);
-
-/* Return the balance factor (difference in heights) */
-return (left_height - right_height);
+return (0);
 }
